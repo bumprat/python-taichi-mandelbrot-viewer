@@ -6,5 +6,4 @@ Ctrl + mouse click: zoom in
 
 Alt + mouse click: zoom out
 
-![screenshot](screenshot.png "Screenshot")
-
+<img src="./screenshot.png" width="400" height="400" />

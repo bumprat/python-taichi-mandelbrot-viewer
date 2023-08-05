@@ -1,15 +1,25 @@
 # Mandelbrot Set Viewer
 
+## Controls
+
 mouse drag: pan viewport
 
 Ctrl + mouse click: zoom in
 
 Alt + mouse click: zoom out
 
+## Arch
 
-| origin               | customize color             |
+default using `vulkan`, change this in main.py
+
+```python
+ti.init(arch=ti.opengl) # ti.gpu, ti.cuda, ti.dx11
+```
+
+
+| original               | customize color             |
 | ---------------------- | ---------------------- |
-| ![origin](./screenshot_origin.png) | ![customize color](./screenshot_color_shift.png) |
+| ![original](./screenshot_original.png) | ![customize color](./screenshot_color_shift.png) |
 
 | elephant valley             | flower               |
 | ---------------------- | ---------------------- |

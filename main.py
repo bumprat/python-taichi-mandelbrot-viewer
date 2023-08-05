@@ -1,7 +1,7 @@
 import taichi as ti
 import time
 
-ti.init(arch=ti.gpu)
+ti.init(arch=ti.vulkan)
 # ti.init(debug=True)
 [width, height] = [1000, 1000]
 # zoom 1: -2 to 2 is width
@@ -168,9 +168,10 @@ while window.running:
     if draw:
         gen_image(center_x, center_y, zoom, max_iter)
         down_sample()
-        draw = False
-        last_render_time = time.time() - start
     canvas.set_image(pixel)
+    if draw:
+        last_render_time = time.time() - start
+        draw = False
 
     mouse = window.get_cursor_pos()
     x = left[None] + mouse[0] * 4 / zoom
@@ -205,6 +206,6 @@ while window.running:
             draw = True
         dragging = False
         action = ""
-    gui.text(f"last render time: {last_render_time*1000:.3f}ms")
+    gui.text(f"last render time: {last_render_time*1000.0:.3f}ms")
     gui.end()
     window.show()
